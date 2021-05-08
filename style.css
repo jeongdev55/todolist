@@ -1,44 +1,63 @@
+/* 요소 선택자 */
 body{
-	caret-color: #a65ed6;  
+	/* 삽입 캐럿/ 기본적으로는 검정색이지만 속성을 통해 색상 변경 가능
+	caret-color: red; >> 빨강색 커서
+	caret-color: auto; >> 기본 검정
+	caret-color: transparent >>
+	*/
+	caret-color: #a65ed6;    
 	color:rgb(253, 253, 253);
 	font-family:Verdana;
 }
 
+/* 아이디 선택자 # 사용*/
 #todolist {
-	text-align: left;
-	max-width: 500px;
-	margin: auto;
-	background: linear-gradient(135deg, #dbb8db, #8400ff);
+	text-align: center;  	 /*div 문단의 모든 글씨 방향을 가운데로 */
+	max-width: 600px;        /*문단의 가로 길이 지정 */
+	margin: auto;            /*margin은 네 방향 바깥 여백 영역을 설정
+							 (margin-top,margin-right,margin-bottom,margin-left) */
+	background: linear-gradient(#f76c6c, #767fe6); /* linear-gradient()함수는 두개 이상의 색이 직선을 따라 점진적으로 변화하는 이미지를 생성한다.*/
   }
   
+  /* 클래스 선택자 . 사용 / To do list 문구 부분 */
   .main__title {
-	margin: 0px;
-	padding-top: 10px;
-	padding-bottom: 0px;
-	text-align: center;
-	color: white;
+	margin: 3em;
+	padding-top: 10px; 		 /*요소의 위쪽에 안쪽 여백을 설정*/
+	padding-bottom: 0; 		 /*요소의 아래쪽에 안쪽 여백을 설정*/
+	text-align: center;		 /* 텍스트의 위치 설정 가운데*/
+	color: white;		   /* 텍스트 컬러 설정*/
   }
 
-.main__title h1 {
-	margin-bottom: 25px;
+/* 메인 타이틀 h1속성에 대한 설정*/
+.main__title h1 { 
+	margin-bottom: -30px;   /* h1 에 대한 아래 여백 설정 */
 } 
 
-*:focus {
-	outline: none;
-  }
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.input__data{
+	margin: 10px;
 }
-.item {
+
+
+.input__data form{
+	margin: 0px 30px 5px 70px;  /* text 타입 위치 설정*/
+	align-items: center;
+	display: flex; /*div문단을 가로로 정렬 버튼과 함께 */
+	justify-content: space-between;
+}
+
+.item{
 	width: 300px;
 	height: 30px;
 	border-radius: 15px;
-	border: 1px solid #f3f2f2;
-	padding: 0px 30px;
-	margin: 50px;
+	border: 1px solid #fbe7c6;
+	padding: 0px 30px;	
+}
+
+
+/* :focue 의사 클래스는 양식의 입력 칸 등 포커스를 받는 요소를 나타냄 
+			(요소 클릭 또는 탭 선택시 발동*/
+*:focus {  
+	outline:none; 	/*단축 속성은 모든 외곽선 속성을 한꺼번에 지정  none = t설정하지 않겠다*/
   }
 
 
@@ -48,8 +67,7 @@ ul {
 	background-color:#dfbdfa;
 	border-radius:39px;
 	border:2px solid #c584f3;
-	margin-left: 390px;
-	margin-block:-200px;
+	display: flex; 
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -69,4 +87,31 @@ ul {
 	position:relative;
 	top:5px;
 }
+
+
+
+/*ul 리스트 목록에 대한 설정*/
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+  
+/*목록 각 줄별로 설정 */
+ul li{
+	cursor:pointer;  /* 커서 설정 (손가락) */
+	position: relative;   /*positon 문서 상에 요소를 배치하는 방법을 지정 / realtive - 흐름에 따라 */
+	padding: 12px 8px 12px 0px;    /* 각 줄마다 간격 설정 */
+	background-color:#d4d1d1;
+	font-size: 15px;
+	transition: 0.3s;
+}
+
+/* 마우스 커서를 올려뒀을때*/
+ul li:hover { 
+	background: rgb(236, 234, 234);
+  }
+
+
 
